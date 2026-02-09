@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmazonSolo — Go Solo. Go Safely. Go Deep.</title>
+  <meta name="description" content="AmazonSolo is the solo travel gateway to the Amazon rainforest. Confidence-first guidance for independent travelers. Coming soon.">
+  <style>
+    :root {
+      --green-deep: #1a3a2a;
+      --green-mid: #2d5e3f;
+      --green-light: #4a8c5e;
+      --green-pale: #e8f0ea;
+      --earth: #c9a96e;
+      --earth-light: #f5eed6;
+      --sand: #faf7f0;
+      --text: #2c2c2c;
+      --text-light: #6b6b6b;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--sand);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Top bar */
+    .top-bar {
+      background: var(--green-deep);
+      color: var(--earth);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 50%, var(--green-light) 100%);
+      color: var(--white);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .logo-text {
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--earth);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 strong {
+      font-weight: 700;
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--earth);
+      margin: 1.5rem 0 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      border: 1.5px solid var(--earth);
+      color: var(--earth);
+      padding: 0.5rem 1.8rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* Section base */
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--green-deep);
+    }
+
+    .section-title strong {
+      font-weight: 600;
+    }
+
+    /* What is */
+    .what-is {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+    }
+
+    .what-is p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .what-is p + p {
+      margin-top: 1rem;
+    }
+
+    .highlight-quote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      background: var(--green-pale);
+      border-left: 3px solid var(--green-light);
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 1.1rem;
+      color: var(--green-deep);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Pillars */
+    .pillars {
+      background: var(--sand);
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 600px) {
+      .pillar-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .pillar-card {
+      background: var(--white);
+      border: 1px solid var(--green-pale);
+      border-radius: 0.75rem;
+      padding: 1.75rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .pillar-card:hover {
+      box-shadow: 0 4px 20px rgba(26, 58, 42, 0.08);
+    }
+
+    .pillar-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--green-pale);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--green-mid);
+    }
+
+    .pillar-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Gateways */
+    .gateways {
+      background: var(--green-deep);
+      color: var(--white);
+    }
+
+    .gateways .section-label {
+      color: var(--earth);
+    }
+
+    .gateways .section-title {
+      color: var(--white);
+    }
+
+    .gateways-intro {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      max-width: 550px;
+      line-height: 1.7;
+    }
+
+    .gateway-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 480px) {
+      .gateway-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .gateway-list {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .gateway-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      transition: background 0.2s ease;
+    }
+
+    .gateway-item:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .gateway-city {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .gateway-country {
+      font-size: 0.8rem;
+      color: var(--earth);
+      letter-spacing: 0.05em;
+    }
+
+    /* For who */
+    .for-who {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+    }
+
+    .audience-list {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .audience-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .audience-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--green-light);
+      border-radius: 50%;
+      margin-top: 0.55rem;
+    }
+
+    /* Dev status */
+    .dev-status {
+      background: var(--earth-light);
+      text-align: center;
+    }
+
+    .dev-status .section-inner {
+      max-width: 550px;
+    }
+
+    .dev-status p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .dev-status p + p {
+      margin-top: 1rem;
+    }
+
+    .status-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .status-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--white);
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .status-dot.building { background: var(--earth); }
+    .status-dot.planned { background: var(--green-light); opacity: 0.5; }
+
+    /* Footer */
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    footer .footer-brand {
+      color: var(--earth);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p + p {
+      margin-top: 0.25rem;
+    }
+
+    /* Subtle animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content {
+      animation: fadeUp 0.8s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">Under Development &mdash; Coming Soon</div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="logo-text">AmazonSolo</div>
+      <h1>Go <strong>Solo</strong>. Go <strong>Safely</strong>.<br>Go <strong>Deep</strong>.</h1>
+      <p class="tagline">The solo travel gateway to the Amazon rainforest.</p>
+      <span class="coming-soon-badge">Coming Soon</span>
+    </div>
+  </section>
+
+  <!-- What is AmazonSolo -->
+  <section class="what-is">
+    <div class="section-inner">
+      <p class="section-label">What We're Building</p>
+      <h2 class="section-title">A <strong>confidence bridge</strong> into the Amazon</h2>
+      <p>AmazonSolo is for people who want to visit the Amazon rainforest but feel intimidated, unsure, or overwhelmed by logistics. We're building the most honest, safety-first solo travel resource for the Amazon &mdash; no hype, no recklessness.</p>
+      <div class="highlight-quote">
+        Solo doesn't mean alone. It means independent planning with guided depth &mdash; and the confidence to know you can do this.
+      </div>
+      <p>We spotlight Indigenous-led experiences, prioritize ethical tourism, and treat the Amazon with the humility it demands. Every recommendation is grounded in reality, not romance.</p>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="pillars">
+    <div class="section-inner">
+      <p class="section-label">Our Approach</p>
+      <h2 class="section-title">Built on <strong>four principles</strong></h2>
+      <div class="pillar-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Safety-First</h3>
+          <p>Real risks, real preparation. We include what to avoid, when not to go, and minimum safety standards &mdash; because honesty builds trust.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Indigenous-Led</h3>
+          <p>We spotlight Indigenous-owned lodges, community guides, and fair-pay standards. Culture is sovereign leadership, not content.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Preparation-First</h3>
+          <p>Gateway guides, packing checklists, health prep, scam avoidance, and realistic itineraries &mdash; everything you need before you go.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Ethics-First</h3>
+          <p>Trust-first monetization. No junk affiliate spam. No predatory upsells. Every partnership is disclosed and vetted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gateways -->
+  <section class="gateways">
+    <div class="section-inner">
+      <p class="section-label">Amazon Gateways</p>
+      <h2 class="section-title">Six <strong>solo-friendly entry points</strong></h2>
+      <p class="gateways-intro">Each gateway city will have a dedicated guide covering costs, safety, lodges, transport, itineraries, and what you'll realistically see.</p>
+      <div class="gateway-list">
+        <div class="gateway-item">
+          <div class="gateway-city">Iquitos</div>
+          <div class="gateway-country">Peru</div>
+        </div>
+        <div class="gateway-item">
+          <div class="gateway-city">Puerto Maldonado</div>
+          <div class="gateway-country">Peru</div>
+        </div>
+        <div class="gateway-item">
+          <div class="gateway-city">Leticia</div>
+          <div class="gateway-country">Colombia</div>
+        </div>
+        <div class="gateway-item">
+          <div class="gateway-city">Manaus</div>
+          <div class="gateway-country">Brazil</div>
+        </div>
+        <div class="gateway-item">
+          <div class="gateway-city">Tena</div>
+          <div class="gateway-country">Ecuador</div>
+        </div>
+        <div class="gateway-item">
+          <div class="gateway-city">Rurrenabaque</div>
+          <div class="gateway-country">Bolivia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For who -->
+  <section class="for-who">
+    <div class="section-inner">
+      <p class="section-label">Who This Is For</p>
+      <h2 class="section-title">Solo doesn't mean <strong>lonely</strong></h2>
+      <ul class="audience-list">
+        <li>First-time solo travelers who want the Amazon but feel overwhelmed</li>
+        <li>Women traveling solo who need safety-first, honest guidance</li>
+        <li>Older travelers (50+) looking for comfortable but authentic experiences</li>
+        <li>Introverts who want safe connection without party energy</li>
+        <li>People seeking a nature-based reset &mdash; from burnout, grief, or simply life</li>
+        <li>Anyone curious about the Amazon but unsure where to start</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Dev status -->
+  <section class="dev-status">
+    <div class="section-inner">
+      <p class="section-label">Development Status</p>
+      <h2 class="section-title">We're <strong>building this</strong> right now</h2>
+      <p>AmazonSolo is actively under development. We're crafting gateway guides, safety resources, and Indigenous-led experience spotlights &mdash; all grounded in verified information.</p>
+      <p>The site will launch with comprehensive guides for all six gateway cities, trip templates, packing checklists, and health preparation resources.</p>
+      <div class="status-items">
+        <span class="status-chip"><span class="status-dot building"></span>Gateway Guides</span>
+        <span class="status-chip"><span class="status-dot building"></span>Safety Resources</span>
+        <span class="status-chip"><span class="status-dot planned"></span>Trip Templates</span>
+        <span class="status-chip"><span class="status-dot planned"></span>Lodge Profiles</span>
+        <span class="status-chip"><span class="status-dot planned"></span>Packing Checklists</span>
+        <span class="status-chip"><span class="status-dot planned"></span>Wildlife Guides</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-brand">AmazonSolo</p>
+    <p>Go solo. Go safely. Go deep.</p>
+    <p>&copy; AmazonSolo.com &mdash; All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
