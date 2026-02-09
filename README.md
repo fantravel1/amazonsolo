@@ -1,0 +1,2 @@
+# amazonsolo
+Full Guide
