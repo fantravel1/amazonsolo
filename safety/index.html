@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety Guide — AmazonSolo</title>
+  <meta name="description" content="Comprehensive safety guide for solo Amazon travel. Real risks, realistic preparation, and minimum safety standards.">
+  <style>
+    :root {
+      --green-deep: #1a3a2a;
+      --green-mid: #2d5e3f;
+      --green-light: #4a8c5e;
+      --green-pale: #e8f0ea;
+      --earth: #c9a96e;
+      --earth-light: #f5eed6;
+      --sand: #faf7f0;
+      --text: #2c2c2c;
+      --text-light: #6b6b6b;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--sand);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--green-pale);
+      color: var(--green-deep);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 50%, var(--green-light) 100%);
+      color: var(--white);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--earth);
+      margin-top: 1rem;
+    }
+
+    /* Section base */
+    section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--green-deep);
+    }
+
+    h2 strong {
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin: 1rem 0 1rem 2rem;
+      color: var(--text-light);
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--green-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      background: var(--white);
+    }
+
+    .warning-box {
+      background: #fff3cd;
+      border-left: 4px solid #ff9800;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0.25rem;
+    }
+
+    .warning-box h4 {
+      color: #e65100;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .tip-box {
+      background: var(--green-pale);
+      border-left: 4px solid var(--green-light);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0.25rem;
+    }
+
+    .tip-box h4 {
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    footer .footer-brand {
+      color: var(--earth);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p + p {
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="nav-brand">AmazonSolo</a>
+      <ul class="nav-links">
+        <li><a href="/start-here/">Start Here</a></li>
+        <li><a href="/#gateways">Gateways</a></li>
+        <li><a href="/safety/" style="color: var(--green-light);">Safety</a></li>
+        <li><a href="/packing/">Packing</a></li>
+        <li><a href="/health/">Health</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Travel Safely in the Amazon</h1>
+      <p>Real risks, honest preparation, realistic standards.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <div class="section-inner">
+      <h2>Our Safety <strong>Philosophy</strong></h2>
+
+      <p>Solo Amazon travel is manageable and increasingly safe—but not consequence-free. We believe in honesty: acknowledging real risks, avoiding hype, and giving you the tools to prepare.</p>
+
+      <p>This guide covers what can actually go wrong, how to prevent it, and what to do if something happens anyway.</p>
+
+      <div class="tip-box">
+        <h4>✓ Key Principle</h4>
+        <p>Most problems in the Amazon come from poor decision-making, not random bad luck. Good decisions come from good information. That's what we provide.</p>
+      </div>
+
+      <h3>The Real Risks</h3>
+
+      <h4 style="margin-top: 1rem;">Health Risks (Most Common)</h4>
+      <ul>
+        <li><strong>Malaria:</strong> Present in some regions. Preventable with proper prophylaxis and mosquito avoidance.</li>
+        <li><strong>Dengue fever:</strong> Spread by daytime mosquitoes. Manage with insect repellent.</li>
+        <li><strong>Gastrointestinal issues:</strong> From food/water. Use bottled water, eat cooked food.</li>
+        <li><strong>Dehydration:</strong> The heat is relentless. Drink constantly.</li>
+        <li><strong>Injuries:</strong> Cuts, slips, stings. Common but manageable.</li>
+      </ul>
+
+      <h4>Environmental Risks</h4>
+      <ul>
+        <li><strong>Wildlife encounters:</strong> Rare and usually avoidable. Most animals avoid humans.</li>
+        <li><strong>Flash floods:</strong> Rainy season risk. Guides know how to manage this.</li>
+        <li><strong>Getting lost:</strong> Why guides are essential.</li>
+      </ul>
+
+      <h4>Human Risks</h4>
+      <ul>
+        <li><strong>Tourist scams:</strong> In towns, not the jungle. Stay alert in cities.</li>
+        <li><strong>Drug-related activity:</strong> Real but geographically limited. Choose lodges in safe areas.</li>
+        <li><strong>Poor guide quality:</strong> Underprepared guides are the most common safety issue. Choose carefully.</li>
+      </ul>
+
+      <div class="warning-box">
+        <h4>⚠ When NOT to Go</h4>
+        <p>Don't go if you have serious health conditions requiring regular medical care. Medical facilities in the Amazon are limited. Also avoid during peak malaria season without proper precautions.</p>
+      </div>
+
+      <h3>Your Safety Checklist</h3>
+
+      <h4 style="margin-top: 1rem;">Before You Leave</h4>
+      <ul>
+        <li>✓ Get required vaccinations (yellow fever, typhoid, hepatitis A)</li>
+        <li>✓ Get malaria prophylaxis from your doctor</li>
+        <li>✓ Purchase travel insurance with medical evacuation</li>
+        <li>✓ File emergency contacts with your embassy</li>
+        <li>✓ Share your itinerary with someone at home</li>
+        <li>✓ Get a basic travel health kit</li>
+      </ul>
+
+      <h4>Choose Your Lodge/Guide Carefully</h4>
+      <ul>
+        <li>✓ Research guide reviews and credentials</li>
+        <li>✓ Ensure guides speak your language or use translators</li>
+        <li>✓ Confirm communication equipment (radio, satellite phone)</li>
+        <li>✓ Verify lodge has basic medical supplies and communication</li>
+        <li>✓ Ask about group size (prefer smaller groups)</li>
+        <li>✓ Check weather conditions before booking</li>
+      </ul>
+
+      <h4>In the Jungle</h4>
+      <ul>
+        <li>✓ Stay with your guide. Always.</li>
+        <li>✓ Use insect repellent multiple times daily</li>
+        <li>✓ Drink bottled or purified water only</li>
+        <li>✓ Wear long sleeves and pants during mosquito hours (dawn/dusk)</li>
+        <li>✓ Wear sturdy boots (snakes stay on the ground)</li>
+        <li>✓ Don't swim without guide approval</li>
+        <li>✓ Report any health issues immediately</li>
+      </ul>
+
+      <h3>Gateway Cities: Safety Profiles</h3>
+
+      <p>Each gateway has different safety characteristics:</p>
+
+      <ul>
+        <li><strong>Iquitos:</strong> Tourist infrastructure. City crime exists but manageable. Tourist areas relatively safe.</li>
+        <li><strong>Puerto Maldonado:</strong> Smaller, lower-crime city. Good safety record among tourists.</li>
+        <li><strong>Leticia:</strong> Tri-border area. Cross-border issues rare for tourists; city areas safe.</li>
+        <li><strong>Manaus:</strong> Larger urban center. Higher crime in some areas; stay in tourist zones.</li>
+        <li><strong>Tena:</strong> Small, relaxed. Very low crime. Less urban infrastructure.</li>
+        <li><strong>Rurrenabaque:</strong> Small, backpacker-friendly. Low crime. Very basic medical facilities.</li>
+      </ul>
+
+      <p>Each gateway guide covers specific safety concerns and recommendations.</p>
+
+      <div class="tip-box">
+        <h4>✓ When in Doubt</h4>
+        <p>Ask your guide. They live there. If something feels unsafe, say so. Good guides will respect and adjust.</p>
+      </div>
+
+      <h3>What to Do if Something Goes Wrong</h3>
+
+      <ul>
+        <li><strong>Minor injury/illness:</strong> Inform guide immediately. Most lodges have basic medical supplies.</li>
+        <li><strong>Serious medical emergency:</strong> Radio or satellite phone to nearest hospital. Evacuation may be needed.</li>
+        <li><strong>Lost:</strong> Stay calm, stay in one place, make noise. Guides search systematically.</li>
+        <li><strong>Animal encounter:</strong> Don't run. Back away slowly. Guides know predator behavior.</li>
+      </ul>
+
+      <p><strong>This is why travel insurance is essential.</strong></p>
+
+      <h3>Gender-Specific Safety</h3>
+
+      <p>Women traveling solo deserve specific guidance. We have a <a href="/solo-women/">dedicated women's safety guide</a> covering harassment, solo-specific precautions, and practical strategies.</p>
+
+      <h3>Questions?</h3>
+
+      <p>Safety concerns are legitimate. Don't book with anyone who dismisses them. Good operators welcome questions.</p>
+
+      <p><a href="/start-here/">← Back to Start Here</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-brand">AmazonSolo</p>
+    <p>Go solo. Go safely. Go deep.</p>
+    <p>&copy; AmazonSolo.com &mdash; All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

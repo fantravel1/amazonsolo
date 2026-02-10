@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing Guide — AmazonSolo</title>
+  <meta name="description" content="Complete packing checklist for Amazon rainforest travel. What to bring, what to skip, and how to pack light.">
+  <style>
+    :root {
+      --green-deep: #1a3a2a;
+      --green-mid: #2d5e3f;
+      --green-light: #4a8c5e;
+      --green-pale: #e8f0ea;
+      --earth: #c9a96e;
+      --earth-light: #f5eed6;
+      --sand: #faf7f0;
+      --text: #2c2c2c;
+      --text-light: #6b6b6b;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--sand);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--green-pale);
+      color: var(--green-deep);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 50%, var(--green-light) 100%);
+      color: var(--white);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--earth);
+      margin-top: 1rem;
+    }
+
+    /* Section base */
+    section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--green-deep);
+    }
+
+    h2 strong {
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin: 1rem 0 1rem 2rem;
+      color: var(--text-light);
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--green-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      background: var(--white);
+    }
+
+    .tip-box {
+      background: var(--green-pale);
+      border-left: 4px solid var(--green-light);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0.25rem;
+    }
+
+    .tip-box h4 {
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .checklist {
+      background: var(--sand);
+      border: 1px solid var(--green-pale);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .checklist h4 {
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .checklist ul {
+      margin: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--green-pale);
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .checklist li::before {
+      content: '☐ ';
+      margin-right: 0.5rem;
+      color: var(--green-light);
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    footer .footer-brand {
+      color: var(--earth);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p + p {
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="nav-brand">AmazonSolo</a>
+      <ul class="nav-links">
+        <li><a href="/start-here/">Start Here</a></li>
+        <li><a href="/#gateways">Gateways</a></li>
+        <li><a href="/safety/">Safety</a></li>
+        <li><a href="/packing/" style="color: var(--green-light);">Packing</a></li>
+        <li><a href="/health/">Health</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Pack Smart for the Rainforest</h1>
+      <p>Everything you need, nothing you don't.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <div class="section-inner">
+      <h2>Packing for the <strong>Amazon</strong></h2>
+
+      <p>The rainforest is wet, hot, muddy, and unforgiving to poor packing choices. Too much gear and you'll suffer carrying it. Too little and you'll suffer without it.</p>
+
+      <p>This guide breaks down essentials by category and trip length.</p>
+
+      <div class="tip-box">
+        <h4>✓ Golden Rule</h4>
+        <p>Everything you bring should be waterproof or quick-drying. Cotton is the enemy. Choose synthetic, merino wool, or technical fabrics.</p>
+      </div>
+
+      <h3>Luggage</h3>
+
+      <p><strong>Bring a backpack, not a suitcase.</strong> Wheeled luggage is worthless in the jungle.</p>
+
+      <ul>
+        <li><strong>Main bag:</strong> 40–60L backpack (structured, padded, good ventilation)</li>
+        <li><strong>Day pack:</strong> 15–25L for jungle days and explorations</li>
+        <li><strong>Waterproof dry bag:</strong> For electronics and valuables</li>
+        <li><strong>Compression sacks:</strong> Keep clothes dry and organized</li>
+      </ul>
+
+      <div class="checklist">
+        <h4>Essentials Checklist</h4>
+        <ul>
+          <li>Moisture-wicking shirts (2-3)</li>
+          <li>Lightweight pants (2 pairs)</li>
+          <li>Shorts (1-2 pairs)</li>
+          <li>Underwear (7 days worth, synthetic/merino)</li>
+          <li>Socks (5-7 pairs, quick-dry)</li>
+          <li>Lightweight jacket or rain poncho</li>
+          <li>Swimsuit/quick-dry shorts</li>
+          <li>Sturdy hiking boots (broken in!)</li>
+          <li>Camp shoes or sandals</li>
+        </ul>
+      </div>
+
+      <h3>Protection & Safety</h3>
+
+      <ul>
+        <li><strong>Insect repellent (DEET 30%+ or picaridin 20%):</strong> Your lifeline. Bring more than you think you need.</li>
+        <li><strong>Sunscreen (SPF 50+, waterproof):</strong> UV reflection off water is intense.</li>
+        <li><strong>Hat:</strong> Wide-brimmed, fast-drying.</li>
+        <li><strong>Long sleeves & pants:</strong> For mosquito hours (dusk, dawn, inside).</li>
+        <li><strong>First-aid kit:</strong> Antibiotic ointment, pain reliever, anti-inflammatory, bandages, blister treatment.</li>
+        <li><strong>Medications:</strong> Any prescriptions, plus antacid, anti-diarrheal.</li>
+      </ul>
+
+      <h3>Toiletries</h3>
+
+      <ul>
+        <li>Biodegradable soap</li>
+        <li>Toothbrush and toothpaste</li>
+        <li>Sunscreen and lip balm (SPF)</li>
+        <li>Insect repellent (checked above)</li>
+        <li>Deodorant (optional but appreciated by lodge mates)</li>
+        <li>Prescription medications</li>
+        <li>Anti-malaria tablets (if prescribed)</li>
+        <li>Personal hygiene items</li>
+        <li>Wet wipes or paper towels</li>
+      </ul>
+
+      <div class="tip-box">
+        <h4>✓ Laundry</h4>
+        <p>Most lodges have laundry service. You can pack lighter and wash clothes midway through your trip.</p>
+      </div>
+
+      <h3>Electronics & Documentation</h3>
+
+      <ul>
+        <li><strong>Phone & charger:</strong> Waterproof case for river activities.</li>
+        <li><strong>Camera:</strong> Optional but waterproof cases are essential.</li>
+        <li><strong>Battery packs:</strong> Solar chargers can help in extended trips.</li>
+        <li><strong>Headlamp or flashlight:</strong> For nighttime jungle spotting and camp navigation.</li>
+        <li><strong>Passport & copies:</strong> Keep copies separate from original.</li>
+        <li><strong>Travel insurance documents:</strong> Print-outs are safer than digital-only.</li>
+        <li><strong>Cash and cards:</strong> Some lodges don't accept cards; bring cash.</li>
+      </ul>
+
+      <h3>What to Skip</h3>
+
+      <ul>
+        <li><strong>Cotton clothing:</strong> Holds moisture; promotes mold and fungal issues.</li>
+        <li><strong>Multiple pairs of jeans:</strong> Heavy and slow to dry.</li>
+        <li><strong>Heavy jackets:</strong> Bring rain protection instead.</li>
+        <li><strong>Formal clothing:</strong> Lodges are casual; no need for dressier items.</li>
+        <li><strong>Too many books:</strong> Lodges often have shared libraries; go digital.</li>
+        <li><strong>Kitchen appliances:</strong> Your lodge provides meals.</li>
+        <li><strong>Excessive electronics:</strong> Less is more in the jungle.</li>
+      </ul>
+
+      <h3>By Trip Length</h3>
+
+      <h4>7-Day Trip</h4>
+      <p>Pack lighter; most lodges do laundry.</p>
+      <ul>
+        <li>40L backpack + 15L day pack</li>
+        <li>3 pairs of pants/shorts, 4 shirts</li>
+        <li>7 pairs of socks and underwear</li>
+        <li>1 jacket or rain poncho</li>
+        <li>Hiking boots + camp shoes</li>
+        <li>All essentials listed above</li>
+      </ul>
+
+      <h4>10-Day Trip</h4>
+      <p>Mid-range packing; mix of laundry and fresh clothes.</p>
+      <ul>
+        <li>50L backpack + 20L day pack</li>
+        <li>4 pairs of pants/shorts, 5-6 shirts</li>
+        <li>10 pairs of socks and underwear</li>
+        <li>Lightweight jacket + rain poncho</li>
+        <li>Hiking boots + camp shoes</li>
+        <li>All essentials</li>
+      </ul>
+
+      <h4>14-Day+ Trip</h4>
+      <p>Remote or river-based expedition; plan for limited laundry.</p>
+      <ul>
+        <li>60L backpack + 20L day pack</li>
+        <li>5 pairs of pants/shorts, 7+ shirts</li>
+        <li>14 pairs of socks and underwear (or plan multiple washings)</li>
+        <li>Lightweight jacket + rain poncho + thermal layers</li>
+        <li>Hiking boots + camp shoes</li>
+        <li>All essentials, plus extra medications</li>
+      </ul>
+
+      <h3>Final Tips</h3>
+
+      <ul>
+        <li><strong>Weigh your bag:</strong> Aim for 20-25 lbs (9-11 kg) total including backpack.</li>
+        <li><strong>Test your boots:</strong> Worn-in boots are essential. Blisters ruin trips.</li>
+        <li><strong>Pack in waterproof bags:</strong> Even inside your backpack, use compression sacks or dry bags.</li>
+        <li><strong>Leave room for acquisitions:</strong> Bring a collapsible duffel for souvenirs and purchases.</li>
+        <li><strong>Ask your lodge:</strong> They can confirm what's provided (towels, toiletries, etc.) so you don't overpack.</li>
+      </ul>
+
+      <p><a href="/start-here/">← Back to Start Here</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-brand">AmazonSolo</p>
+    <p>Go solo. Go safely. Go deep.</p>
+    <p>&copy; AmazonSolo.com &mdash; All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

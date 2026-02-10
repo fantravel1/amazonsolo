@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iquitos, Peru — Gateway Guide — AmazonSolo</title>
+  <meta name="description" content="Complete guide to visiting Iquitos as your Amazon gateway. Costs, safety, lodges, transport, itineraries, and realistic wildlife expectations.">
+  <style>
+    :root {
+      --green-deep: #1a3a2a;
+      --green-mid: #2d5e3f;
+      --green-light: #4a8c5e;
+      --green-pale: #e8f0ea;
+      --earth: #c9a96e;
+      --earth-light: #f5eed6;
+      --sand: #faf7f0;
+      --text: #2c2c2c;
+      --text-light: #6b6b6b;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--sand);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--green-pale);
+      color: var(--green-deep);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 50%, var(--green-light) 100%);
+      color: var(--white);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: var(--earth);
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+      color: var(--earth);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--earth);
+      margin-top: 1rem;
+    }
+
+    /* Section base */
+    section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: var(--green-deep);
+    }
+
+    h2 strong {
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin: 1rem 0 1rem 2rem;
+      color: var(--text-light);
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--green-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      background: var(--white);
+    }
+
+    .highlight-box {
+      background: var(--green-pale);
+      border-left: 4px solid var(--green-light);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0.25rem;
+    }
+
+    .highlight-box h4 {
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .spec-box {
+      background: var(--sand);
+      border: 1px solid var(--green-pale);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .spec-box h4 {
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--green-pale);
+    }
+
+    .spec-item:last-child {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      font-weight: 500;
+      color: var(--green-deep);
+    }
+
+    .spec-value {
+      color: var(--text-light);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    footer .footer-brand {
+      color: var(--earth);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p + p {
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="nav-brand">AmazonSolo</a>
+      <ul class="nav-links">
+        <li><a href="/start-here/">Start Here</a></li>
+        <li><a href="/#gateways">Gateways</a></li>
+        <li><a href="/safety/">Safety</a></li>
+        <li><a href="/packing/">Packing</a></li>
+        <li><a href="/health/">Health</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="breadcrumb"><a href="/#gateways">Gateways</a> / Peru</div>
+      <h1>Iquitos Gateway</h1>
+      <p>The largest and most accessible Amazon entry point.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <div class="section-inner">
+      <h2>Welcome to <strong>Iquitos</strong></h2>
+
+      <p>Iquitos is the largest city in Peru's Amazon region, with a population of around 400,000. It's the most developed gateway, with direct international flights and the most tourist infrastructure. For first-time visitors, Iquitos is the easiest entry point into the rainforest.</p>
+
+      <div class="spec-box">
+        <h4>Quick Facts</h4>
+        <div class="spec-item">
+          <span class="spec-label">Population</span>
+          <span class="spec-value">~400,000</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Elevation</span>
+          <span class="spec-value">505 ft (154 m)</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Climate</span>
+          <span class="spec-value">Tropical; hot year-round</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Access</span>
+          <span class="spec-value">Direct flights from Lima, Miami</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Best Time to Visit</span>
+          <span class="spec-value">Jun–Nov (dry season)</span>
+        </div>
+      </div>
+
+      <h3>Getting There</h3>
+
+      <ul>
+        <li><strong>Flights:</strong> LATAM and other carriers offer direct flights from Lima. Flights take ~2 hours. Some international flights available from Miami.</li>
+        <li><strong>Cost:</strong> Lima to Iquitos flights typically $100–$200 round-trip</li>
+        <li><strong>Airport:</strong> Coronel FAP Francsico Secada Vignetta International Airport (IATA: IQT)</li>
+      </ul>
+
+      <h3>Costs & Budget</h3>
+
+      <div class="spec-box">
+        <h4>Daily Budget Breakdown</h4>
+        <div class="spec-item">
+          <span class="spec-label">Accommodation (budget)</span>
+          <span class="spec-value">$15–$30/night</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Lodge (per night)</span>
+          <span class="spec-value">$80–$300+/night</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Guided tours</span>
+          <span class="spec-value">$40–$100+/day</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Meals</span>
+          <span class="spec-value">$15–$40/day</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Total daily</span>
+          <span class="spec-value">$70–$150 (budget)</span>
+        </div>
+      </div>
+
+      <h3>Safety</h3>
+
+      <p>Iquitos has a mixed reputation, but organized tourism is generally safe. The main tourist areas (hotels, restaurants, lodges) are well-traveled and secure. Like any city, petty theft happens—keep valuables secure and avoid displaying wealth.</p>
+
+      <ul>
+        <li>Stay in well-known hotels and tour operators</li>
+        <li>Avoid the port areas after dark</li>
+        <li>Don't accept drinks from strangers</li>
+        <li>Use established tour operators for jungle trips</li>
+        <li>Malaria precautions are important; use prophylaxis</li>
+      </ul>
+
+      <div class="highlight-box">
+        <h4>✓ Solo Women Safety</h4>
+        <p>Women solo travelers report generally positive experiences in Iquitos with common-sense precautions. Stay in hostel communities, book group tours, and use accredited operators.</p>
+      </div>
+
+      <h3>What to Expect in the Jungle</h3>
+
+      <ul>
+        <li><strong>Wildlife:</strong> Monkeys, pink river dolphins, caimans, birds. Jaguars/pumas are rare but possible.</li>
+        <li><strong>Lodges:</strong> Range from budget ($60–$100/night) to luxury ($300+/night)</li>
+        <li><strong>Trip length:</strong> 3–14 day trips are common</li>
+        <li><strong>Physical demands:</strong> Hiking, boat rides, some swimming</li>
+        <li><strong>Comfort level:</strong> Varies; budget lodges are basic but authentic</li>
+      </ul>
+
+      <h3>Recommended Lodges</h3>
+
+      <p><em>Placeholder: This section would contain detailed lodge recommendations with links to reviews and booking pages.</em></p>
+
+      <h3>Itinerary Ideas</h3>
+
+      <h4>7-Day Iquitos Experience</h4>
+      <ul>
+        <li>Day 1: Arrive, explore Iquitos city, acclimate</li>
+        <li>Days 2–4: Lodge-based jungle exploration (wildlife spotting, canoe trips)</li>
+        <li>Days 5–6: Extended river journey or Indigenous community visit</li>
+        <li>Day 7: Return to Iquitos, depart</li>
+      </ul>
+
+      <h4>10-Day Deep Dive</h4>
+      <ul>
+        <li>Days 1–2: Iquitos orientation</li>
+        <li>Days 3–8: Remote lodge expedition (guided jungle walks, river explorations)</li>
+        <li>Days 9–10: Return and departure</li>
+      </ul>
+
+      <h3>Practical Information</h3>
+
+      <ul>
+        <li><strong>Language:</strong> Spanish is primary; English is limited outside tourist areas</li>
+        <li><strong>Currency:</strong> Peruvian Sol (S/); USD widely accepted</li>
+        <li><strong>Electricity:</strong> 220V; bring adapter</li>
+        <li><strong>Internet:</strong> Available in city; rare in lodges</li>
+        <li><strong>Visa:</strong> Check Peru's current requirements for your nationality</li>
+      </ul>
+
+      <div class="highlight-box">
+        <h4>💡 Pro Tip</h4>
+        <p>Book your lodge ahead of time, especially in peak season (Jun–Aug). Direct booking often cheaper than through agencies, but agencies provide more support and guidance.</p>
+      </div>
+
+      <h3>Questions?</h3>
+
+      <p>Gateway guides are works in progress. If you need specific information about Iquitos not covered here, <a href="/about/">contact us.</a></p>
+
+      <p><a href="/#gateways">← Back to Gateway List</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-brand">AmazonSolo</p>
+    <p>Go solo. Go safely. Go deep.</p>
+    <p>&copy; AmazonSolo.com &mdash; All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
