@@ -102,21 +102,26 @@
     /* Hero */
     .hero {
       position: relative;
-      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 50%, var(--green-light) 100%);
+      background: linear-gradient(160deg, rgba(26, 58, 42, 0.7) 0%, rgba(45, 94, 63, 0.7) 50%, rgba(74, 140, 94, 0.7) 100%),
+                  url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&q=80') center/cover no-repeat;
       color: var(--white);
       padding: 5rem 1.5rem 4rem;
       text-align: center;
       overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.03) 0%, transparent 70%);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -229,8 +234,10 @@
 
     /* What is */
     .what-is {
-      background: var(--white);
+      background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.98) 100%),
+                  url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80') center/cover no-repeat;
       border-bottom: 1px solid var(--green-pale);
+      position: relative;
     }
 
     .what-is p {
@@ -258,7 +265,8 @@
 
     /* Pillars */
     .pillars {
-      background: var(--sand);
+      background: linear-gradient(135deg, rgba(250, 247, 240, 0.95) 0%, rgba(250, 247, 240, 0.95) 100%),
+                  url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80') center/cover no-repeat;
     }
 
     .pillar-grid {
@@ -275,15 +283,31 @@
     }
 
     .pillar-card {
-      background: var(--white);
+      background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.98) 100%),
+                  var(--white);
+      background-size: 100% 100%, auto;
+      background-position: center, center;
       border: 1px solid var(--green-pale);
       border-radius: 0.75rem;
       padding: 1.75rem;
-      transition: box-shadow 0.2s ease;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      position: relative;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-light) 0%, var(--earth) 100%);
+      border-radius: 0.75rem 0.75rem 0 0;
     }
 
     .pillar-card:hover {
-      box-shadow: 0 4px 20px rgba(26, 58, 42, 0.08);
+      box-shadow: 0 8px 24px rgba(26, 58, 42, 0.12);
+      transform: translateY(-4px);
     }
 
     .pillar-icon {
@@ -314,7 +338,8 @@
 
     /* Gateways */
     .gateways {
-      background: var(--green-deep);
+      background: linear-gradient(135deg, rgba(26, 58, 42, 0.85) 0%, rgba(45, 94, 63, 0.85) 100%),
+                  url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80') center/cover no-repeat;
       color: var(--white);
     }
 
@@ -418,12 +443,57 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quick-start-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .quick-start-card:nth-child(1)::before {
+      background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&q=80');
+    }
+
+    .quick-start-card:nth-child(2)::before {
+      background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80');
+    }
+
+    .quick-start-card:nth-child(3)::before {
+      background-image: url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80');
+    }
+
+    .quick-start-card:nth-child(4)::before {
+      background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80');
+    }
+
+    .quick-start-card:nth-child(5)::before {
+      background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80');
+    }
+
+    .quick-start-card:nth-child(6)::before {
+      background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80');
     }
 
     .quick-start-card:hover {
       background: var(--green-pale);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(26, 58, 42, 0.1);
+    }
+
+    .quick-start-card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .quick-start-card h4 {
@@ -445,7 +515,8 @@
 
     /* For who */
     .for-who {
-      background: var(--white);
+      background: linear-gradient(135deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.97) 100%),
+                  url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=1200&q=80') center/cover no-repeat;
       border-bottom: 1px solid var(--green-pale);
     }
 
@@ -477,7 +548,8 @@
 
     /* Dev status */
     .dev-status {
-      background: var(--earth-light);
+      background: linear-gradient(135deg, rgba(245, 238, 214, 0.97) 0%, rgba(245, 238, 214, 0.97) 100%),
+                  url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80') center/cover no-repeat;
       text-align: center;
     }
 
