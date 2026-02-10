@@ -34,6 +34,60 @@
       overflow-x: hidden;
     }
 
+    /* Navigation */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--green-pale);
+      color: var(--green-deep);
+    }
+
+    .nav-links a.active {
+      background: var(--green-light);
+      color: var(--white);
+    }
+
     /* Top bar */
     .top-bar {
       background: var(--green-deep);
@@ -100,16 +154,46 @@
       letter-spacing: 0.05em;
     }
 
-    .coming-soon-badge {
+    .cta-button {
       display: inline-block;
+      background: var(--earth);
+      color: var(--green-deep);
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+
+    .cta-button:hover {
+      background: #daa84f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 169, 110, 0.3);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
       border: 1.5px solid var(--earth);
       color: var(--earth);
-      padding: 0.5rem 1.8rem;
-      border-radius: 2rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
+    }
+
+    .cta-button.secondary:hover {
+      background: var(--earth);
+      color: var(--green-deep);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
     }
 
     /* Section base */
@@ -273,11 +357,17 @@
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 0.5rem;
       padding: 1.25rem;
-      transition: background 0.2s ease;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      cursor: pointer;
     }
 
     .gateway-item:hover {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
     .gateway-city {
@@ -290,6 +380,67 @@
       font-size: 0.8rem;
       color: var(--earth);
       letter-spacing: 0.05em;
+    }
+
+    /* Quick start section */
+    .quick-start {
+      background: var(--white);
+      border-bottom: 1px solid var(--green-pale);
+    }
+
+    .quick-start-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 600px) {
+      .quick-start-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .quick-start-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .quick-start-card {
+      background: var(--sand);
+      border: 1px solid var(--green-pale);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .quick-start-card:hover {
+      background: var(--green-pale);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 58, 42, 0.1);
+    }
+
+    .quick-start-card h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin: 0;
+    }
+
+    .quick-start-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    .quick-start-icon {
+      font-size: 1.5rem;
     }
 
     /* For who */
@@ -407,7 +558,20 @@
 </head>
 <body>
 
-  <div class="top-bar">Under Development &mdash; Coming Soon</div>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="nav-brand">AmazonSolo</a>
+      <ul class="nav-links">
+        <li><a href="/start-here/">Start Here</a></li>
+        <li><a href="#gateways">Gateways</a></li>
+        <li><a href="/safety/">Safety</a></li>
+        <li><a href="/packing/">Packing</a></li>
+        <li><a href="/health/">Health</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Hero -->
   <section class="hero">
@@ -415,7 +579,10 @@
       <div class="logo-text">AmazonSolo</div>
       <h1>Go <strong>Solo</strong>. Go <strong>Safely</strong>.<br>Go <strong>Deep</strong>.</h1>
       <p class="tagline">The solo travel gateway to the Amazon rainforest.</p>
-      <span class="coming-soon-badge">Coming Soon</span>
+      <div class="hero-cta">
+        <a href="/start-here/" class="cta-button">Start Here</a>
+        <a href="#gateways" class="cta-button secondary">Explore Gateways</a>
+      </div>
     </div>
   </section>
 
@@ -471,36 +638,76 @@
   </section>
 
   <!-- Gateways -->
-  <section class="gateways">
+  <section class="gateways" id="gateways">
     <div class="section-inner">
       <p class="section-label">Amazon Gateways</p>
       <h2 class="section-title">Six <strong>solo-friendly entry points</strong></h2>
-      <p class="gateways-intro">Each gateway city will have a dedicated guide covering costs, safety, lodges, transport, itineraries, and what you'll realistically see.</p>
+      <p class="gateways-intro">Each gateway city has a dedicated guide covering costs, safety, lodges, transport, itineraries, and what you'll realistically see.</p>
       <div class="gateway-list">
-        <div class="gateway-item">
+        <a href="/gateways/iquitos/" class="gateway-item">
           <div class="gateway-city">Iquitos</div>
           <div class="gateway-country">Peru</div>
-        </div>
-        <div class="gateway-item">
+        </a>
+        <a href="/gateways/puerto-maldonado/" class="gateway-item">
           <div class="gateway-city">Puerto Maldonado</div>
           <div class="gateway-country">Peru</div>
-        </div>
-        <div class="gateway-item">
+        </a>
+        <a href="/gateways/leticia/" class="gateway-item">
           <div class="gateway-city">Leticia</div>
           <div class="gateway-country">Colombia</div>
-        </div>
-        <div class="gateway-item">
+        </a>
+        <a href="/gateways/manaus/" class="gateway-item">
           <div class="gateway-city">Manaus</div>
           <div class="gateway-country">Brazil</div>
-        </div>
-        <div class="gateway-item">
+        </a>
+        <a href="/gateways/tena/" class="gateway-item">
           <div class="gateway-city">Tena</div>
           <div class="gateway-country">Ecuador</div>
-        </div>
-        <div class="gateway-item">
+        </a>
+        <a href="/gateways/rurrenabaque/" class="gateway-item">
           <div class="gateway-city">Rurrenabaque</div>
           <div class="gateway-country">Bolivia</div>
-        </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="quick-start">
+    <div class="section-inner">
+      <p class="section-label">Explore Resources</p>
+      <h2 class="section-title">Get <strong>prepared</strong> to explore</h2>
+      <div class="quick-start-grid">
+        <a href="/start-here/" class="quick-start-card">
+          <div class="quick-start-icon">🗺️</div>
+          <h4>Start Here Guide</h4>
+          <p>First-time visitor? Begin with our beginner's guide to solo Amazon travel.</p>
+        </a>
+        <a href="/safety/" class="quick-start-card">
+          <div class="quick-start-icon">🛡️</div>
+          <h4>Safety Essentials</h4>
+          <p>Real risks, real preparation. Learn what to avoid and minimum safety standards.</p>
+        </a>
+        <a href="/packing/" class="quick-start-card">
+          <div class="quick-start-icon">🎒</div>
+          <h4>Packing Checklist</h4>
+          <p>Complete packing lists for rainforest travel by trip length.</p>
+        </a>
+        <a href="/health/" class="quick-start-card">
+          <div class="quick-start-icon">💉</div>
+          <h4>Health Prep</h4>
+          <p>Vaccinations, medications, and health precautions before you go.</p>
+        </a>
+        <a href="/trips/" class="quick-start-card">
+          <div class="quick-start-icon">📅</div>
+          <h4>Trip Templates</h4>
+          <p>Pre-planned itineraries for 7-day, 10-day, and 14-day trips.</p>
+        </a>
+        <a href="/solo-women/" class="quick-start-card">
+          <div class="quick-start-icon">👩</div>
+          <h4>Women Solo Travelers</h4>
+          <p>Safety-first guidance tailored for women traveling alone.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -527,14 +734,14 @@
       <p class="section-label">Development Status</p>
       <h2 class="section-title">We're <strong>building this</strong> right now</h2>
       <p>AmazonSolo is actively under development. We're crafting gateway guides, safety resources, and Indigenous-led experience spotlights &mdash; all grounded in verified information.</p>
-      <p>The site will launch with comprehensive guides for all six gateway cities, trip templates, packing checklists, and health preparation resources.</p>
+      <p>The site is launching with core resources and gateway guides. Explore what's available now, and check back as we expand content.</p>
       <div class="status-items">
         <span class="status-chip"><span class="status-dot building"></span>Gateway Guides</span>
         <span class="status-chip"><span class="status-dot building"></span>Safety Resources</span>
+        <span class="status-chip"><span class="status-dot building"></span>Packing Checklists</span>
+        <span class="status-chip"><span class="status-dot building"></span>Health Prep</span>
         <span class="status-chip"><span class="status-dot planned"></span>Trip Templates</span>
         <span class="status-chip"><span class="status-dot planned"></span>Lodge Profiles</span>
-        <span class="status-chip"><span class="status-dot planned"></span>Packing Checklists</span>
-        <span class="status-chip"><span class="status-dot planned"></span>Wildlife Guides</span>
       </div>
     </div>
   </section>
