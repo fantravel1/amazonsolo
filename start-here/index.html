@@ -85,10 +85,15 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 50%, var(--green-light) 100%);
+      background: linear-gradient(160deg, rgba(26, 58, 42, 0.7) 0%, rgba(45, 94, 63, 0.7) 50%, rgba(74, 140, 94, 0.7) 100%),
+                  url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80') center/cover no-repeat;
       color: var(--white);
       padding: 3rem 1.5rem;
       text-align: center;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-content {
